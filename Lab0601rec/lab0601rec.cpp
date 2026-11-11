@@ -50,7 +50,7 @@ int Count(int* a, const int size, int i)
 {
     if (i < size)
     {
-        if (a[i] > 0 && a[i] % 4 != 0)
+        if (a[i] > 0 && !((a[i] % 4) == 0))
             return 1 + Count(a, size, i + 1);
         else
             return Count(a, size, i + 1);
@@ -63,7 +63,7 @@ int Sum(int* a, const int size, int i)
 {
     if (i < size)
     {
-        if (a[i] > 0 && a[i] % 4 != 0)
+        if (a[i] > 0 && !((a[i] % 4) == 0))
             return a[i] + Sum(a, size, i + 1);
         else
             return Sum(a, size, i + 1);
@@ -74,7 +74,7 @@ int Sum(int* a, const int size, int i)
 
 void Zero(int* a, const int size, int i)
 {
-    if (a[i] > 0 && a[i] % 4 != 0)
+    if (a[i] > 0 && !((a[i] % 4) == 0))
         a[i] = 0;
     if (i < size - 1)
         Zero(a, size, i + 1);
